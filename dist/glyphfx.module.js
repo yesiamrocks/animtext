@@ -3,7 +3,7 @@
  * Title: glyphfx
  * Description: A lightweight JavaScript utility to split text into letters with animation-ready wrappers. Perfect for GSAP, cssanimation, or any custom animation workflow.
  *
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Shafayetul Islam Pavel
  * Website: https://github.com/yesiamrocks/glyphfx#readme
  * LinkedIn: https://www.linkedin.com/in/shafayetul/

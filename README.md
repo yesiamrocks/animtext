@@ -1,6 +1,13 @@
 # 🔡 Amazing Text & Letter Animations
 
-![Plugin](https://img.shields.io/badge/Type-Plugin-4B9CE2?style=for-the-badge) ![Vanilla JS](https://img.shields.io/badge/JS-Vanilla%20JS-brightgreen?style=for-the-badge) ![No Dependencies](https://img.shields.io/badge/Dependencies-None-lightgrey?style=for-the-badge) ![npm](https://img.shields.io/npm/dw/@hellouxpavel/cssanimation?style=for-the-badge) [![jsDelivr](https://img.shields.io/jsdelivr/npm/hm/@hellouxpavel/cssanimation?style=for-the-badge)](https://cdn.jsdelivr.net/npm/@hellouxpavel/cssanimation@latest/dist/) [![unpkg](https://img.shields.io/badge/CDN-unpkg-blue?style=for-the-badge)](https://unpkg.com/browse/@hellouxpavel/cssanimation/) [![View Demo](https://img.shields.io/badge/🎬%20Live-Demo-green?style=for-the-badge)](https://yesiamrocks.github.io/cssanimation/text-animation.html)
+![Plugin](https://img.shields.io/badge/Type-Text%20Enhancer-4B9CE2?style=for-the-badge)
+![Vanilla JS](https://img.shields.io/badge/JS-Vanilla%20JS-brightgreen?style=for-the-badge)
+![No Dependencies](https://img.shields.io/badge/Dependencies-None-lightgrey?style=for-the-badge)
+[![Built for](https://img.shields.io/badge/Built%20for-cssanimation-blueviolet?style=for-the-badge)](https://github.com/yesiamrocks/cssanimation)
+[![npm](https://img.shields.io/npm/v/glyphfx?style=for-the-badge)](https://www.npmjs.com/package/glyphfx)
+[![jsDelivr](https://img.shields.io/jsdelivr/npm/hm/glyphfx?style=for-the-badge)](https://cdn.jsdelivr.net/npm/glyphfx@latest/dist/)
+[![unpkg](https://img.shields.io/badge/CDN-unpkg-blue?style=for-the-badge)](https://unpkg.com/browse/glyphfx/)
+[![View Demo](https://img.shields.io/badge/🎬%20Live-Demo-green?style=for-the-badge)](https://yesiamrocks.github.io/GlyphFX/)
 
 `glyphfx.js` plugin is a lightweight, CSS-only enhancement script that brings **letter-by-letter, word-by-word, and line-by-line** animations to your projects. It's designed to work seamlessly with [cssanimation](https://cssanimation.io), for robust and customizable text effects.
 
