@@ -1,14 +1,14 @@
 {
-  "name": "typeflow",
-  "version": "1.0.0",
+  "name": "glyphfx",
+  "version": "1.0.1",
   "type": "module",
   "description": "A lightweight JavaScript utility to split text into letters with animation-ready wrappers. Perfect for GSAP, cssanimation, or any custom animation workflow.",
-  "main": "dist/typeflow.js",
-  "module": "dist/typeflow.module.js",
+  "main": "dist/glyphfx.js",
+  "module": "dist/glyphfx.module.js",
   "exports": {
     ".": {
-      "import": "./dist/typeflow.module.js",
-      "require": "./dist/typeflow.js"
+      "import": "./dist/glyphfx.module.js",
+      "require": "./dist/glyphfx.js"
     }
   },
   "scripts": {
@@ -26,17 +26,17 @@
     "split-text",
     "textfx",
     "letters",
-    "typeflow"
+    "glyphfx"
   ],
   "author": "Shafayetul Islam Pavel",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yesiamrocks/typeflow.git"
+    "url": "https://github.com/yesiamrocks/glyphfx.git"
   },
-  "homepage": "https://github.com/yesiamrocks/typeflow#readme",
+  "homepage": "https://github.com/yesiamrocks/glyphfx#readme",
   "bugs": {
-    "url": "https://github.com/yesiamrocks/typeflow/issues"
+    "url": "https://github.com/yesiamrocks/glyphfx/issues"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",

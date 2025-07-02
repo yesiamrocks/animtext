@@ -35,22 +35,22 @@ const banner = `/*!
 export default [
   // Unminified UMD
   {
-    input: "src/typeflow.js",
+    input: "src/glyphfx.js",
     output: {
-      file: "dist/typeflow.js",
+      file: "dist/glyphfx.js",
       format: "umd",
-      name: "TypeFlow",
+      name: "GlyphFX",
       banner,
     },
   },
 
   // Minified UMD
   {
-    input: "src/typeflow.js",
+    input: "src/glyphfx.js",
     output: {
-      file: "dist/typeflow.min.js",
+      file: "dist/glyphfx.min.js",
       format: "umd",
-      name: "TypeFlow",
+      name: "GlyphFX",
       banner,
     },
     plugins: [
@@ -64,9 +64,9 @@ export default [
 
   // ESM (for modern bundlers/imports)
   {
-    input: "src/typeflow.js",
+    input: "src/glyphfx.js",
     output: {
-      file: "dist/typeflow.module.js",
+      file: "dist/glyphfx.module.js",
       format: "es",
       banner,
     },
