@@ -1,0 +1,45 @@
+{
+  "name": "typeflow",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A lightweight JavaScript utility to split text into letters with animation-ready wrappers. Perfect for GSAP, cssanimation, or any custom animation workflow.",
+  "main": "dist/typeflow.js",
+  "module": "dist/typeflow.module.js",
+  "exports": {
+    ".": {
+      "import": "./dist/typeflow.module.js",
+      "require": "./dist/typeflow.js"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "text-animation",
+    "letter-split",
+    "typography",
+    "cssanimation",
+    "gsap",
+    "animation",
+    "split-text",
+    "textfx",
+    "letters",
+    "typeflow"
+  ],
+  "author": "Shafayetul Islam Pavel",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yesiamrocks/typeflow.git"
+  },
+  "homepage": "https://github.com/yesiamrocks/typeflow#readme",
+  "bugs": {
+    "url": "https://github.com/yesiamrocks/typeflow/issues"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.0.0"
+  }
+}
