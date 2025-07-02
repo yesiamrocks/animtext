@@ -1,26 +1,26 @@
 (function () {
-  if (typeof window === 'undefined') return;
+  if (typeof window === "undefined") return;
 
   // --- Utility Function to get Computed Animation Duration ---
   function getCssAnimationDuration(element, className) {
     if (!element || !className) return null;
 
-    const tempEl = document.createElement('span');
-    tempEl.style.visibility = 'hidden';
-    tempEl.style.position = 'absolute';
+    const tempEl = document.createElement("span");
+    tempEl.style.visibility = "hidden";
+    tempEl.style.position = "absolute";
     tempEl.className = className;
     document.body.appendChild(tempEl);
 
     const computedStyle = window.getComputedStyle(tempEl);
-    let duration = computedStyle.getPropertyValue('animation-duration');
+    let duration = computedStyle.getPropertyValue("animation-duration");
 
     document.body.removeChild(tempEl);
 
     if (duration) {
       duration = duration.trim();
-      if (duration.endsWith('ms')) {
+      if (duration.endsWith("ms")) {
         return parseFloat(duration);
-      } else if (duration.endsWith('s')) {
+      } else if (duration.endsWith("s")) {
         return parseFloat(duration) * 1000;
       }
     }
@@ -41,9 +41,9 @@
   // --- End Utility Function ---
 
   // Inject fallback styles for animated spans
-  const style = document.createElement('style');
+  const style = document.createElement("style");
   style.textContent = `
-        .ca__lt-letter, .ca__lt-word, .ca__lt-line {
+        .gl__fx-letter, .gl__fx-word, .gl__fx-line {
             display: inline-block;
             animation-duration: 1s;
             animation-fill-mode: both;
@@ -56,16 +56,16 @@
   window.CSSAnimationLetter = window.CSSAnimationLetter || {}; // Ensure it exists
   window.CSSAnimationLetter.init = initLetterAnimations; // Assign the function
 
-  window.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener("DOMContentLoaded", () => {
     initLetterAnimations(); // Initial call on DOMContentLoaded
   });
 
   // Main initialization function for letter animations
   function initLetterAnimations() {
     // Re-run animation functions for all relevant elements
-    animateLetters('ca__lt-sequence', 'sequence');
-    animateLetters('ca__lt-random', 'random');
-    animateLetters('ca__lt-reverse', 'reverse');
+    animateLetters("gl__fx-sequence", "sequence");
+    animateLetters("gl__fx-random", "random");
+    animateLetters("gl__fx-reverse", "reverse");
     animateWords();
     animateLines();
   }
@@ -81,16 +81,23 @@
         el.textContent = el._originalTextContent;
       }
 
-      const delayAttr = el.getAttribute('ca__lt-delay') || '100';
+      const delayAttr = el.getAttribute("gl__fx-delay") || "100";
       const delaySteps = parseMultiValueDelaySteps(delayAttr, 100);
-      const classList = (el.getAttribute(attrName) || 'ca__lt-letter').trim().split(/\s+/);
-      const animated = processTextNodes(el, animationType, delaySteps, classList);
-      el.innerHTML = animated.join('');
+      const classList = (el.getAttribute(attrName) || "gl__fx-letter")
+        .trim()
+        .split(/\s+/);
+      const animated = processTextNodes(
+        el,
+        animationType,
+        delaySteps,
+        classList
+      );
+      el.innerHTML = animated.join("");
     });
   }
 
   function animateWords() {
-    document.querySelectorAll('.cssanimation[ca__lt-word]').forEach((el) => {
+    document.querySelectorAll(".cssanimation[gl__fx-word]").forEach((el) => {
       // Store original content if not already stored, to allow re-processing
       if (!el._originalTextContent) {
         el._originalTextContent = el.textContent;
@@ -98,12 +105,16 @@
         el.textContent = el._originalTextContent;
       }
 
-      const delayAttr = el.getAttribute('ca__lt-delay') || '100';
+      const delayAttr = el.getAttribute("gl__fx-delay") || "100";
       const delaySteps = parseMultiValueDelaySteps(delayAttr, 100);
 
-      const classList = (el.getAttribute('ca__lt-word') || 'ca__lt-word').trim().split(/\s+/);
+      const classList = (el.getAttribute("gl__fx-word") || "gl__fx-word")
+        .trim()
+        .split(/\s+/);
 
-      let baseDuration = getSingleNumberAttribute(el.getAttribute('ca__lt-base-duration'));
+      let baseDuration = getSingleNumberAttribute(
+        el.getAttribute("gl__fx-base-duration")
+      );
 
       if (baseDuration === null && classList.length > 0) {
         const firstClassName = classList[0];
@@ -117,12 +128,18 @@
         baseDuration = 1000; // Default if nothing else is found
       }
 
-      el.innerHTML = processSequentialBy('word', el.textContent, delaySteps, classList, baseDuration);
+      el.innerHTML = processSequentialBy(
+        "word",
+        el.textContent,
+        delaySteps,
+        classList,
+        baseDuration
+      );
     });
   }
 
   function animateLines() {
-    document.querySelectorAll('.cssanimation[ca__lt-line]').forEach((el) => {
+    document.querySelectorAll(".cssanimation[gl__fx-line]").forEach((el) => {
       // Store original content if not already stored, to allow re-processing
       if (!el._originalTextContent) {
         el._originalTextContent = el.textContent;
@@ -130,13 +147,18 @@
         el.textContent = el._originalTextContent;
       }
 
-      const delayAttr = el.getAttribute('ca__lt-delay') || '150';
+      const delayAttr = el.getAttribute("gl__fx-delay") || "150";
       const delaySteps = parseMultiValueDelaySteps(delayAttr, 150);
 
-      const classList = (el.getAttribute('ca__lt-line') || 'ca__lt-line').trim().split(/\s+/);
-      const lineSeparator = el.getAttribute('ca__lt-separator') === 'dot' ? 'dot' : 'br';
+      const classList = (el.getAttribute("gl__fx-line") || "gl__fx-line")
+        .trim()
+        .split(/\s+/);
+      const lineSeparator =
+        el.getAttribute("gl__fx-separator") === "dot" ? "dot" : "br";
 
-      let baseDuration = getSingleNumberAttribute(el.getAttribute('ca__lt-base-duration'));
+      let baseDuration = getSingleNumberAttribute(
+        el.getAttribute("gl__fx-base-duration")
+      );
 
       if (baseDuration === null && classList.length > 0) {
         const firstClassName = classList[0];
@@ -150,7 +172,14 @@
         baseDuration = 1000; // Default if nothing else is found
       }
 
-      el.innerHTML = processSequentialBy('line', el.textContent, delaySteps, classList, baseDuration, lineSeparator);
+      el.innerHTML = processSequentialBy(
+        "line",
+        el.textContent,
+        delaySteps,
+        classList,
+        baseDuration,
+        lineSeparator
+      );
     });
   }
 
@@ -168,39 +197,50 @@
           wrapper.setAttribute(attr.name, attr.value);
         }
         // Recursively process text nodes within the child element
-        wrapper.innerHTML = processTextNodes(child, animationType, delaySteps, classList).join('');
+        wrapper.innerHTML = processTextNodes(
+          child,
+          animationType,
+          delaySteps,
+          classList
+        ).join("");
         result.push(wrapper.outerHTML);
       }
     });
 
     const spans = chars.map((char, index) => {
-      if (char !== ' ') {
-        const className = classList[index % classList.length] || classList[classList.length - 1]; // Use modulo for class list
+      if (char !== " ") {
+        const className =
+          classList[index % classList.length] ||
+          classList[classList.length - 1]; // Use modulo for class list
         const delay =
           delaySteps[index % delaySteps.length] != null
             ? delaySteps[index % delaySteps.length]
             : delaySteps[delaySteps.length - 1];
-        return `<span class="ca__lt-letter ${className}" style="
+        return `<span class="gl__fx-letter ${className}" style="
                         animation-delay:${delay * index}ms;
                         -moz-animation-delay:${delay * index}ms;
                         -webkit-animation-delay:${delay * index}ms;
                     ">${char}</span>`;
       }
-      return ' '; // Preserve spaces outside of spans
+      return " "; // Preserve spaces outside of spans
     });
 
-    if (animationType === 'random') {
-      const nonSpaceSpans = spans.filter((s) => s.trim() !== ''); // Only shuffle actual animated spans
-      const spaceSpans = spans.filter((s) => s.trim() === '');
+    if (animationType === "random") {
+      const nonSpaceSpans = spans.filter((s) => s.trim() !== ""); // Only shuffle actual animated spans
+      const spaceSpans = spans.filter((s) => s.trim() === "");
 
       const indices = nonSpaceSpans.map((_, i) => i);
       shuffle(indices);
 
-      const randomizedAnimatedSpans = Array(nonSpaceSpans.length).fill('');
+      const randomizedAnimatedSpans = Array(nonSpaceSpans.length).fill("");
       indices.forEach((originalIndex, newSequentialIndex) => {
-        randomizedAnimatedSpans[originalIndex] = nonSpaceSpans[originalIndex].replace(
+        randomizedAnimatedSpans[originalIndex] = nonSpaceSpans[
+          originalIndex
+        ].replace(
           /animation-delay:\d+ms/g,
-          `animation-delay:${delaySteps[delaySteps.length - 1] * newSequentialIndex}ms`,
+          `animation-delay:${
+            delaySteps[delaySteps.length - 1] * newSequentialIndex
+          }ms`
         );
       });
 
@@ -208,39 +248,41 @@
       let currentNonSpaceIndex = 0;
       let finalResult = [];
       for (const s of spans) {
-        if (s.trim() !== '') {
+        if (s.trim() !== "") {
           finalResult.push(randomizedAnimatedSpans[currentNonSpaceIndex]);
           currentNonSpaceIndex++;
         } else {
           finalResult.push(s); // Add space back
         }
       }
-      result.push(finalResult.join(''));
-    } else if (animationType === 'reverse') {
-      const nonSpaceSpans = spans.filter((s) => s.trim() !== '');
+      result.push(finalResult.join(""));
+    } else if (animationType === "reverse") {
+      const nonSpaceSpans = spans.filter((s) => s.trim() !== "");
       const numAnimated = nonSpaceSpans.length;
 
       const reversedAnimatedSpans = nonSpaceSpans.map((span, i) =>
         span.replace(
           /animation-delay:\d+ms/g,
-          `animation-delay:${delaySteps[delaySteps.length - 1] * (numAnimated - 1 - i)}ms`,
-        ),
+          `animation-delay:${
+            delaySteps[delaySteps.length - 1] * (numAnimated - 1 - i)
+          }ms`
+        )
       );
 
       let currentNonSpaceIndex = 0;
       let finalResult = [];
       for (const s of spans) {
-        if (s.trim() !== '') {
+        if (s.trim() !== "") {
           finalResult.push(reversedAnimatedSpans[currentNonSpaceIndex]);
           currentNonSpaceIndex++;
         } else {
           finalResult.push(s);
         }
       }
-      result.push(finalResult.join(''));
+      result.push(finalResult.join(""));
     } else {
       // sequence
-      result.push(spans.join(''));
+      result.push(spans.join(""));
     }
 
     return result;
@@ -260,27 +302,38 @@
     return parsed.length > 0 ? parsed : [defaultValue];
   }
 
-  function processSequentialBy(type, text, delaySteps, classList, baseDuration, lineSeparator = 'br') {
+  function processSequentialBy(
+    type,
+    text,
+    delaySteps,
+    classList,
+    baseDuration,
+    lineSeparator = "br"
+  ) {
     let units = [];
     const originalText = text; // Keep original text for splitting
 
-    if (type === 'word') {
+    if (type === "word") {
       units = originalText.split(/(\s+)/); // Capture spaces to re-insert them
-    } else if (type === 'line') {
-      if (lineSeparator === 'dot') {
+    } else if (type === "line") {
+      if (lineSeparator === "dot") {
         // Split by capturing the dot to preserve it in the array
         const rawParts = originalText.split(/(\.)/);
         const finalUnits = [];
         for (let i = 0; i < rawParts.length; i++) {
           let part = rawParts[i].trim(); // Trim parts for cleaner logic
 
-          if (part === '') continue; // Skip empty parts from split (e.g., "word." -> ["word", ".", ""])
+          if (part === "") continue; // Skip empty parts from split (e.g., "word." -> ["word", ".", ""])
 
           // If the current part is text and the next is a dot, combine them
-          if (part !== '.' && i + 1 < rawParts.length && rawParts[i + 1] === '.') {
-            finalUnits.push(part + '.');
+          if (
+            part !== "." &&
+            i + 1 < rawParts.length &&
+            rawParts[i + 1] === "."
+          ) {
+            finalUnits.push(part + ".");
             i++; // Skip the next dot as it's been consumed
-          } else if (part !== '.') {
+          } else if (part !== ".") {
             // It's a text part without a following dot
             finalUnits.push(part);
           }
@@ -300,17 +353,19 @@
 
     units.forEach((unit) => {
       // Skip whitespace or empty captured separators if they are not meant to be animated units
-      if (!unit.trim() && unit !== '\n' && !/<br\s*\/?>/.test(unit)) {
+      if (!unit.trim() && unit !== "\n" && !/<br\s*\/?>/.test(unit)) {
         animatedContent.push(unit); // Add back un-animated spaces/empty strings
         return;
       }
       // If it's a line break, push it as is, not wrapped in a span
-      if (unit === '\n' || /<br\s*\/?>/.test(unit)) {
+      if (unit === "\n" || /<br\s*\/?>/.test(unit)) {
         animatedContent.push(unit);
         return;
       }
 
-      const className = classList[classAndDelayIndex % classList.length] || classList[classList.length - 1];
+      const className =
+        classList[classAndDelayIndex % classList.length] ||
+        classList[classList.length - 1];
 
       const currentUnitSpecificDelay =
         delaySteps[classAndDelayIndex % delaySteps.length] != null
@@ -320,7 +375,7 @@
       const finalAnimationDelay = animationOffset + currentUnitSpecificDelay;
 
       // Add appropriate class for words/lines
-      const spanClass = type === 'word' ? 'ca__lt-word' : 'ca__lt-line';
+      const spanClass = type === "word" ? "gl__fx-word" : "gl__fx-line";
 
       const output = `<span class="${spanClass} ${className}" style="
                         animation-delay:${finalAnimationDelay}ms;
@@ -335,7 +390,7 @@
       classAndDelayIndex++; // Move to next class/delay in sequence
     });
 
-    return animatedContent.join('');
+    return animatedContent.join("");
   }
 
   function shuffle(array) {
