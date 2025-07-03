@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>GlyphFX Live Demo</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="stylesheet" href="../dist/cssanimation.css" />
-        <style>
+  <head>
+    <meta charset="UTF-8" />
+    <title>GlyphFX Live Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../dist/cssanimation.css" />
+    <style>
       body {
         font-family: Arial, sans-serif;
         padding: 20px;
@@ -9121,147 +9121,154 @@
 }
 
     </style>
-    </head>
-    <body class="bg-gray-50 text-gray-800 p-6 font-sans">
-        <div class="max-w-3xl mx-auto space-y-6">
-            <header class="flex items-center gap-3">
-                <span class="text-3xl">🎬</span>
-                <h1 class="text-3xl font-bold">GlyphFX Live Demo</h1>
-            </header>
+  </head>
 
-            <section class="bg-white shadow-md rounded-xl p-6 space-y-4">
-                <div>
-                    <label class="block text-sm font-medium mb-1">Animation
-                        Type:</label>
-                    <select id="animationType"
-                        class="w-full border border-gray-300 rounded px-3 py-2">
-                        <option value="gl__fx-sequence">Sequence</option>
-                        <option value="gl__fx-random">Random</option>
-                        <option value="gl__fx-word">Words</option>
-                        <option value="gl__fx-line">Lines</option>
-                    </select>
-                </div>
+<body class="bg-gray-50 text-gray-800 p-6 font-sans">
+  <div class="max-w-3xl mx-auto space-y-6">
+    <header class="flex items-center gap-3">
+      <span class="text-3xl">🎬</span>
+      <h1 class="text-3xl font-bold">GlyphFX Live Demo</h1>
+    </header>
 
-                <div>
-                    <label class="block text-sm font-medium mb-1">Animation
-                        Classes:</label>
-                    <select id="animationClasses" multiple
-                        class="w-full border border-gray-300 rounded px-3 py-2 h-40">
-                        <!-- Will be populated -->
-                    </select>
-                </div>
+    <section class="bg-white shadow-md rounded-xl p-6 space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-1">Animation Type:</label>
+        <select id="animationType"
+          class="w-full border border-gray-300 rounded px-3 py-2">
+          <option value="gl__fx-sequence">Letter Sequence</option>
+          <option value="gl__fx-random">Letter Random</option>
+          <option value="gl__fx-reverse">Letter Reverse</option>
+          <option value="gl__fx-word">Words</option>
+          <option value="gl__fx-line">Lines</option>
+        </select>
+      </div>
 
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Delay per
-                            unit (ms):</label>
-                        <input id="delay" type="text"
-                            placeholder="e.g., 100 200 300"
-                            class="w-full border border-gray-300 rounded px-3 py-2" />
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Base
-                            duration (ms):</label>
-                        <input id="baseDuration" type="number"
-                            placeholder="e.g., 1000"
-                            class="w-full border border-gray-300 rounded px-3 py-2" />
-                    </div>
-                </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Animation Classes:</label>
+        <select id="animationClasses" multiple
+          class="w-full border border-gray-300 rounded px-3 py-2 h-40">
+          <!-- Populated dynamically -->
+        </select>
+      </div>
 
-                <div id="separatorLabel" style="display: none;">
-                    <label
-                        class="block text-sm font-medium mb-1">Separator:</label>
-                    <select id="separator"
-                        class="w-full border border-gray-300 rounded px-3 py-2">
-                        <option value="br">&lt;br&gt; or newline</option>
-                        <option value="dot">Period (.)</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium mb-1">Text to
-                        Animate:</label>
-                    <textarea id="textInput" rows="3"
-                        class="w-full border border-gray-300 rounded px-3 py-2">Your animated text here.</textarea>
-                </div>
-
-                <button id="applyAnimation"
-                    class="mt-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded">
-                    Apply Animation
-                </button>
-            </section>
-
-            <section class="bg-white shadow-inner rounded-xl p-6">
-                <div class="cssanimation text-lg" id="animatedOutput">Your
-                    animated text here.</div>
-            </section>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium mb-1">Delay per unit (ms):</label>
+          <input id="delay" type="text" placeholder="e.g., 100 200 300"
+            class="w-full border border-gray-300 rounded px-3 py-2" />
         </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Base duration (ms):</label>
+          <input id="baseDuration" type="number" placeholder="e.g., 1000"
+            class="w-full border border-gray-300 rounded px-3 py-2" />
+        </div>
+      </div>
 
-        <script src="../dist/glyphfx.js"></script>
-        <script>
-      const animationClassList = [
-        "ca__fx-fadeIn", "ca__fx-bounceInTop", "ca__fx-moveFromTop",
-        "ca__fx-blurIn", "ca__fx-blurOut", "ca__fx-slideInLeft",
-        "ca__fx-slideInRight", "ca__fx-slinkyDrop", "ca__fx-bobble",
-        "ca__fx-blurInFromBottom", "ca__fx-blurOutToTop", "ca__fx-blobPulseDrop"
-      ];
+      <div id="separatorLabel" style="display: none;">
+        <label class="block text-sm font-medium mb-1">Separator:</label>
+        <select id="separator"
+          class="w-full border border-gray-300 rounded px-3 py-2">
+          <option value="br">&lt;br&gt; or newline</option>
+          <option value="dot">Period (.)</option>
+        </select>
+      </div>
 
-      function populateAnimationClasses() {
-        const select = document.getElementById("animationClasses");
-        select.innerHTML = "";
-        if (animationClassList.length === 0) {
-          const opt = document.createElement("option");
-          opt.textContent = "⚠️ No .ca__fx-* classes found";
-          select.appendChild(opt);
-          return;
-        }
-        animationClassList.forEach((cls) => {
-          const option = document.createElement("option");
-          option.value = cls;
-          option.textContent = cls;
-          select.appendChild(option);
-        });
+      <div>
+        <label class="block text-sm font-medium mb-1">Text to Animate:</label>
+        <textarea id="textInput" rows="3"
+          class="w-full border border-gray-300 rounded px-3 py-2">Your animated text here.</textarea>
+      </div>
+
+      <button id="applyAnimation"
+        class="mt-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded">
+        Apply Animation
+      </button>
+    </section>
+
+    <section class="bg-white shadow-inner rounded-xl p-6 space-y-4">
+      <div class="text-sm text-gray-600">
+        ⚠️ <strong>GlyphFX depends on</strong> 
+        <a class="underline text-blue-600" href="https://github.com/yesiamrocks/cssanimation" target="_blank">
+          @hellouxpavel/cssanimation
+        </a>. Make sure to include <code>cssanimation.css</code> in your page.
+      </div>
+      <div class="cssanimation text-lg" id="animatedOutput">Your animated text here.</div>
+
+      <div>
+        <label class="block text-sm font-medium mt-4 mb-1">Copy-Paste HTML:</label>
+        <pre class="bg-gray-100 text-sm p-3 rounded overflow-auto text-gray-700" id="htmlSnippet">
+<div class="cssanimation" gl__fx-sequence="ca__fx-fadeIn">Your animated text here.</div>
+        </pre>
+      </div>
+    </section>
+  </div>
+
+  <script src="../dist/glyphfx.min.js"></script>
+  <script>
+    const animationClassList = [
+      "ca__fx-fadeIn", "ca__fx-bounceInTop", "ca__fx-moveFromTop",
+      "ca__fx-blurIn", "ca__fx-blurOut", "ca__fx-slideInLeft",
+      "ca__fx-slideInRight", "ca__fx-slinkyDrop", "ca__fx-bobble",
+      "ca__fx-blurInFromBottom", "ca__fx-blurOutToTop", "ca__fx-blobPulseDrop"
+    ];
+
+    function populateAnimationClasses() {
+      const select = document.getElementById("animationClasses");
+      select.innerHTML = "";
+      animationClassList.forEach(cls => {
+        const option = document.createElement("option");
+        option.value = cls;
+        option.textContent = cls;
+        select.appendChild(option);
+      });
+    }
+
+    function applyAnimation() {
+      const type = document.getElementById("animationType").value;
+      const selected = Array.from(document.getElementById("animationClasses").selectedOptions);
+      const classNames = selected.map(opt => opt.value).join(" ");
+      const delay = document.getElementById("delay").value;
+      const baseDuration = document.getElementById("baseDuration").value;
+      const separator = document.getElementById("separator").value;
+      const text = document.getElementById("textInput").value;
+
+      const output = document.getElementById("animatedOutput");
+      output.setAttribute("class", "cssanimation text-lg");
+      output.textContent = text;
+
+      ["gl__fx-sequence", "gl__fx-random", "gl__fx-reverse", "gl__fx-word", "gl__fx-line",
+       "gl__fx-delay", "gl__fx-base-duration", "gl__fx-separator"]
+        .forEach(attr => output.removeAttribute(attr));
+
+      output.setAttribute(type, classNames);
+      if (delay) output.setAttribute("gl__fx-delay", delay);
+      if (baseDuration) output.setAttribute("gl__fx-base-duration", baseDuration);
+      if (type === "gl__fx-line") {
+        output.setAttribute("gl__fx-separator", separator);
       }
 
-      function applyAnimation() {
-        const type = document.getElementById("animationType").value;
-        const selected = Array.from(document.getElementById("animationClasses").selectedOptions);
-        const classNames = selected.map((opt) => opt.value).join(" ");
-        const delay = document.getElementById("delay").value;
-        const baseDuration = document.getElementById("baseDuration").value;
-        const separator = document.getElementById("separator").value;
-        const text = document.getElementById("textInput").value;
+      const attrStr = `${type}="${classNames}"` +
+        (delay ? ` gl__fx-delay="${delay}"` : "") +
+        (baseDuration ? ` gl__fx-base-duration="${baseDuration}"` : "") +
+        (type === "gl__fx-line" ? ` gl__fx-separator="${separator}"` : "");
 
-        const output = document.getElementById("animatedOutput");
-        output.className = "cssanimation";
-        output.textContent = text;
+      document.getElementById("htmlSnippet").textContent =
+        `<div class="cssanimation" ${attrStr}>${text}</div>`;
 
-        // Remove previous attributes
-        [
-          "gl__fx-sequence", "gl__fx-random", "gl__fx-word", "gl__fx-line",
-          "gl__fx-delay", "gl__fx-base-duration", "gl__fx-separator"
-        ].forEach((attr) => output.removeAttribute(attr));
-
-        output.setAttribute(type, classNames);
-        if (delay) output.setAttribute("gl__fx-delay", delay);
-        if (baseDuration) output.setAttribute("gl__fx-base-duration", baseDuration);
-        if (type === "gl__fx-line") {
-          output.setAttribute("gl__fx-separator", separator);
-        }
-
+      requestAnimationFrame(() => {
         if (window.CSSAnimationLetter?.init) {
           window.CSSAnimationLetter.init();
         }
-      }
-
-      document.getElementById("applyAnimation").addEventListener("click", applyAnimation);
-
-      document.getElementById("animationType").addEventListener("change", (e) => {
-        document.getElementById("separatorLabel").style.display =
-          e.target.value === "gl__fx-line" ? "block" : "none";
       });
+    }
 
-      window.addEventListener("DOMContentLoaded", populateAnimationClasses);
-    </script>
-    </body>
+    document.getElementById("applyAnimation").addEventListener("click", applyAnimation);
+    document.getElementById("animationType").addEventListener("change", (e) => {
+      document.getElementById("separatorLabel").style.display =
+        e.target.value === "gl__fx-line" ? "block" : "none";
+    });
+    window.addEventListener("DOMContentLoaded", populateAnimationClasses);
+  </script>
+</body>
+</html>
 </html>
