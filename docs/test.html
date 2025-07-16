@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>GlyphFX Demo</title>
+        <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    .demo-section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #444;
+    }
+    .cssanimation {
+      font-size: 2rem;
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    /* Simple animation classes */
+    .fadeIn {
+      animation-name: fadeIn;
+    }
+    .bounceIn {
+      animation-name: bounceIn;
+    }
+    .slideUp {
+      animation-name: slideUp;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.3); opacity: 0; }
+      50% { transform: scale(1.1); }
+      70% { transform: scale(0.9); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+    </head>
+    <body>
+        <h1>GlyphFX Animation Demo</h1>
+
+        <!-- Letter Sequence Animation -->
+        <div class="demo-section">
+            <h2>Letter Sequence Animation</h2>
+            <span class="cssanimation" gl__fx-sequence="fadeIn">Animate Letters
+                in Sequence</span>
+        </div>
+
+        <!-- Letter Reverse Animation -->
+        <div class="demo-section">
+            <h2>Letter Reverse Animation</h2>
+            <span class="cssanimation" gl__fx-reverse="fadeIn"
+                gl__fx-delay="100">Reverse Animation Order</span>
+        </div>
+
+        <!-- Letter Random Animation -->
+        <div class="demo-section">
+            <h2>Letter Random Animation</h2>
+            <span class="cssanimation" gl__fx-random="fadeIn"
+                gl__fx-delay="40">Random Letter Entry</span>
+        </div>
+
+        <!-- Word Animation (Bounce) -->
+        <div class="demo-section">
+            <h2>Word Animation (Bounce)</h2>
+            <span class="cssanimation" gl__fx-word="bounceIn"
+                gl__fx-delay="120">Animate by Word with Bounce</span>
+        </div>
+
+        <!-- Line Animation (Default BR) -->
+        <div class="demo-section">
+            <h2>Line Animation (Default BR)</h2>
+            <span class="cssanimation" gl__fx-line="slideUp bounceIn fadeIn"
+                gl__fx-delay="300">
+                Line one<br>
+                Line two<br>
+                Line three
+                Line Four
+                Line Five
+            </span>
+        </div>
+
+        <!-- Line Animation with Dot Separator -->
+        <div class="demo-section">
+            <h2>Line Animation with Dot Separator</h2>
+            <span class="cssanimation" gl__fx-line="slideUp" gl__fx-delay="150"
+                gl__fx-separator="dot">
+                First line. Second line. Final line. Test Line.
+            </span>
+        </div>
+
+        <script src="../src/glyphfx-update.js"></script>
+
+    </body>
+</html>
