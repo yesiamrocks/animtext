@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.1] – 2025-07-18
+
+### Documentation Update
+
+- Rewrote and simplified all README sections for better developer experience
+- Added:
+  - Clear installation instructions via NPM and CDN
+  - Usage examples for all `data-at-*` attributes
+  - Detailed explanations for `data-at-delay` and `data-at-base-duration`
+  - Debugging guide using `window.__ANIMTEXT_DEBUG`
+  - Clarified `.cssanimation` class requirement
+  - Fixed typo in full usage example (`data-at-duration` → `data-at-base-duration`)
+- Improved formatting, readability, and consistency throughout
+
 ## [1.1.0] - 2025-07-18
 
 ### Initial Public Release – Rebranded from GlyphFX.js → AnimText
