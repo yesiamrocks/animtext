@@ -1,13 +1,12 @@
-# Amazing Text & Letter Animations
+# AnimText.js – Lightweight JavaScript Library for Letter, Word & Line Animations
 
-![Plugin](https://img.shields.io/badge/Type-Text%20Enhancer-4B9CE2?style=for-the-badge)
 ![Vanilla JS](https://img.shields.io/badge/JS-Vanilla%20JS-brightgreen?style=for-the-badge)
 ![No Dependencies](https://img.shields.io/badge/Dependencies-None-lightgrey?style=for-the-badge)
-[![Built for](https://img.shields.io/badge/Built%20for-cssanimation-blueviolet?style=for-the-badge)](https://github.com/yesiamrocks/cssanimation)
 [![npm](https://img.shields.io/npm/v/animtext?style=for-the-badge)](https://www.npmjs.com/package/animtext)
 [![jsDelivr](https://img.shields.io/jsdelivr/npm/hm/animtext?style=for-the-badge)](https://www.jsdelivr.com/package/npm/animtext)
 [![unpkg](https://img.shields.io/badge/CDN-unpkg-blue?style=for-the-badge)](https://unpkg.com/browse/animtext/)
 [![View Demo](https://img.shields.io/badge/🎬%20Live-Demo-green?style=for-the-badge)](https://yesiamrocks.github.io/animtext/)
+[![Made for {css}animation](https://img.shields.io/badge/Made%20for-{css}animation-7e2ea0?style=for-the-badge&logo=css3&logoColor=white)](https://github.com/yesiamrocks/cssanimation)
 
 **AnimText** is a lightweight JavaScript enhancer for animating text with **letter-by-letter, word-by-word, and line-by-line** animations to your projects. It's designed to work seamlessly with [{css}animation](https://github.com/yesiamrocks/cssanimation), for robust and customizable text effects.
 
@@ -104,7 +103,7 @@ This will animate the letters of the heading using your chosen animation class.
 </h2>
 ```
 
-## 1. Letter Animation Usage
+## Letter Animation Usage
 
 Animate text one letter at a time with different sequencing styles:
 
@@ -132,7 +131,7 @@ Animate text one letter at a time with different sequencing styles:
 
 ---
 
-## 2. Word-by-Word Animation `data-at-word`
+## Word-by-Word Animation `data-at-word`
 
 ```html
 <h2 class="cssanimation" data-at-word="ca__fx-fadeIn">
@@ -140,7 +139,7 @@ Animate text one letter at a time with different sequencing styles:
 </h2>
 ```
 
-## 3. Line-by-line Animation `data-at-line`
+## Line-by-line Animation `data-at-line`
 
 ```html
 <p class="cssanimation" data-at-line="ca__fx-fadeIn">
@@ -184,7 +183,7 @@ You don't need to add `data-at-separator` for `<br>` or newlines, this is the **
 
 [Check out this Text & Letter Animations Preview Tool to easily generate the animation code for your text.](https://yesiamrocks.github.io/cssanimation/text-animation.html)
 
-## `data-at-delay`
+## Animation Delay
 
 The `data-at-delay` attribute specifies the delay before each animated unit (letter, word, or line) begins its animation. The values are in milliseconds (ms).
 
@@ -206,7 +205,7 @@ The `data-at-delay` attribute specifies the delay before each animated unit (let
 
 This allows you to create rhythmic or staggered entry effects easily, like `data-at-delay="50 100 100"` as in your example. The first unit gets 50ms delay, and all subsequent units get 100ms delay.
 
-## `data-at-base-duration`
+## Animation Base Duration`
 
 The `data-at-base-duration` attribute provides a simple way to set a global default animation duration for all units (letters, words, or lines) in milliseconds (ms).
 
@@ -236,5 +235,3 @@ This means `data-at-base-duration` gives you a convenient way to set a project-w
 - If you pass more classes or values than needed, the extra elements are skipped, and a warning might be logged to your console to help with debugging.
 - Delay and duration values are parsed safely; non-numeric strings will fall back to default behaviors to prevent errors.
 - Animation duration is determined in this order of precedence: `data-at-base-duration` > CSS-detected duration > internal default.
-
-[← Return to the main README](./README.md)
