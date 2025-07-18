@@ -1,6 +1,6 @@
 // rollup.config.js
 import { readFileSync } from "fs";
-import terser from '@rollup/plugin-terser';
+import terser from "@rollup/plugin-terser";
 
 // --- Package Info ---
 const pkg = JSON.parse(readFileSync("./package.json", "utf8"));
@@ -10,8 +10,8 @@ const parsedAuthor =
   typeof author === "string"
     ? author.split("<")[0].trim()
     : author && author.name
-      ? author.name
-      : "Unknown Author";
+    ? author.name
+    : "Unknown Author";
 
 const currentYear = new Date().getFullYear();
 
@@ -35,22 +35,22 @@ const banner = `/*!
 export default [
   // Unminified UMD
   {
-    input: "src/glyphfx.js",
+    input: "src/animtext.js",
     output: {
-      file: "dist/glyphfx.js",
+      file: "dist/animtext.js",
       format: "umd",
-      name: "GlyphFX",
+      name: "AnimText",
       banner,
     },
   },
 
   // Minified UMD
   {
-    input: "src/glyphfx.js",
+    input: "src/animtext.js",
     output: {
-      file: "dist/glyphfx.min.js",
+      file: "dist/animtext.min.js",
       format: "umd",
-      name: "GlyphFX",
+      name: "AnimText",
       banner,
     },
     plugins: [
@@ -64,9 +64,9 @@ export default [
 
   // ESM (for modern bundlers/imports)
   {
-    input: "src/glyphfx.js",
+    input: "src/animtext.js",
     output: {
-      file: "dist/glyphfx.module.js",
+      file: "dist/animtext.module.js",
       format: "es",
       banner,
     },

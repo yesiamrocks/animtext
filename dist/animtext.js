@@ -1,11 +1,11 @@
 /*!
- * glyphfx.js
- * Title: glyphfx
+ * animtext.js
+ * Title: animtext
  * Description: A lightweight JavaScript utility to split text into letters with animation-ready wrappers. Perfect for GSAP, cssanimation, or any custom animation workflow.
  *
- * Version: 1.0.2
+ * Version: 1.1.0
  * Author: Shafayetul Islam Pavel
- * Website: https://github.com/yesiamrocks/glyphfx#readme
+ * Website: https://github.com/yesiamrocks/animtext#readme
  * LinkedIn: https://www.linkedin.com/in/shafayetul/
  * Email: hello@cssanimation.io
  * GitHub: https://github.com/yesiamrocks

@@ -1,14 +1,14 @@
 {
-  "name": "glyphfx",
-  "version": "1.0.2",
+  "name": "animtext",
+  "version": "1.1.0",
   "type": "module",
   "description": "A lightweight JavaScript utility to split text into letters with animation-ready wrappers. Perfect for GSAP, cssanimation, or any custom animation workflow.",
-  "main": "dist/glyphfx.js",
-  "module": "dist/glyphfx.module.js",
+  "main": "dist/animtext.js",
+  "module": "dist/animtext.module.js",
   "exports": {
     ".": {
-      "import": "./dist/glyphfx.module.js",
-      "require": "./dist/glyphfx.js"
+      "import": "./dist/animtext.module.js",
+      "require": "./dist/animtext.js"
     }
   },
   "scripts": {
@@ -26,17 +26,17 @@
     "split-text",
     "textfx",
     "letters",
-    "glyphfx"
+    "animtext"
   ],
   "author": "Shafayetul Islam Pavel",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yesiamrocks/glyphfx.git"
+    "url": "https://github.com/yesiamrocks/animtext.git"
   },
-  "homepage": "https://github.com/yesiamrocks/glyphfx#readme",
+  "homepage": "https://github.com/yesiamrocks/animtext#readme",
   "bugs": {
-    "url": "https://github.com/yesiamrocks/glyphfx/issues"
+    "url": "https://github.com/yesiamrocks/animtext/issues"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
