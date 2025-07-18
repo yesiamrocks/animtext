@@ -1,6 +1,6 @@
 {
   "name": "animtext",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "type": "module",
   "description": "A lightweight JavaScript utility to split text into letters with animation-ready wrappers. Perfect for GSAP, cssanimation, or any custom animation workflow.",
   "main": "dist/animtext.js",
@@ -21,12 +21,13 @@
     "letter-split",
     "typography",
     "cssanimation",
-    "gsap",
     "animation",
     "split-text",
     "textfx",
     "letters",
-    "animtext"
+    "animtext",
+    "text animation",
+    "text effects"
   ],
   "author": "Shafayetul Islam Pavel",
   "license": "MIT",

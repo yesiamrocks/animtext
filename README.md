@@ -301,7 +301,7 @@ Example: data-at-delay="50 100 100" means:
 
 You can create subtle or dramatic timing effects just by changing the delay pattern.
 
-## Animation Base Duration`
+## Animation Base Duration
 
 The `data-at-base-duration` attribute lets you set a **default animation duration** (in milliseconds) for all animated units — whether they’re letters, words, or lines.
 
