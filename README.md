@@ -5,7 +5,7 @@
 ![No Dependencies](https://img.shields.io/badge/Dependencies-None-lightgrey?style=for-the-badge)
 [![Built for](https://img.shields.io/badge/Built%20for-cssanimation-blueviolet?style=for-the-badge)](https://github.com/yesiamrocks/cssanimation)
 [![npm](https://img.shields.io/npm/v/animtext?style=for-the-badge)](https://www.npmjs.com/package/animtext)
-[![jsDelivr](https://img.shields.io/jsdelivr/npm/hm/animtext?style=for-the-badge)](https://cdn.jsdelivr.net/npm/animtext@latest/dist/)
+[![jsDelivr](https://img.shields.io/jsdelivr/npm/hm/animtext?style=for-the-badge)](https://www.jsdelivr.com/package/npm/animtext)
 [![unpkg](https://img.shields.io/badge/CDN-unpkg-blue?style=for-the-badge)](https://unpkg.com/browse/animtext/)
 [![View Demo](https://img.shields.io/badge/🎬%20Live-Demo-green?style=for-the-badge)](https://yesiamrocks.github.io/animtext/)
 
@@ -44,11 +44,31 @@ animtext.init({ dev: true });
 <script src="https://cdn.jsdelivr.net/npm/animtext@latest/dist/animtext.min.js"></script>
 ```
 
-animtext requires @hellouxpavel/cssanimation to function. It provides the actual animation classes (like ca\_\_fx-fadeIn) used in the HTML examples.
+## Animation Classes Powered by {css}animation
+
+**AnimText** is designed to work hand-in-hand with the animation classes from **[{css}animation](https://github.com/yesiamrocks/cssanimation)**. These CSS classes are required to make the **AnimText** actually animate elements, so be sure to include them in your project.
+
+Install the animation library:
 
 ```bash
 npm install @hellouxpavel/cssanimation
 ```
+
+Then import it in your JavaScript:
+
+```js
+import "@hellouxpavel/cssanimation";
+```
+
+Or include it via CDN:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@hellouxpavel/cssanimation@latest/dist/cssanimation.min.css" />
+```
+
+Without the cssanimation classes, **AnimText** can still spilt the text, but no animation will play.
 
 ## Getting Started
 
@@ -57,22 +77,44 @@ npm install @hellouxpavel/cssanimation
 ```
 
 This will animate the letters of the heading using your chosen animation class.
+`class="cssanimation"` – Required. This enables animation support from the **[{css}animation](https://github.com/yesiamrocks/cssanimation)** library.
 
-## Letter Animation Usage
+## Supported Attributes
 
-Every animated text block needs the `.cssanimation` class along with a `data-at-*` attribute to define how it animates.
+| Attribute               | Description                                                                      |
+| ----------------------- | -------------------------------------------------------------------------------- |
+| `data-at-sequence`      | Animates letter-by-letter, in order.                                             |
+| `data-at-random`        | Animates letter-by-letter, in a randomized order.                                |
+| `data-at-reverse`       | Animates letter-by-letter, in reverse order (last letter first).                 |
+| `data-at-word`          | Animates word-by-word.                                                           |
+| `data-at-line`          | Animates line-by-line.                                                           |
+| `data-at-delay`         | Accepts one or more delay values (e.g., `100 300 500`) in milliseconds per unit. |
+| `data-at-base-duration` | Optional base animation duration per unit (in ms)                                |
+| `data-at-separator`     | Use `dot` to split on periods `( . )`. Default: line breaks (`<br>` or `\n`)     |
 
-### 1. Letter-by-Letter Animation
+**Example**
+
+```html
+<h2
+  class="cssanimation"
+  data-at-word="ca__fx-fadeIn ca__fx-fadeInLeft ca__fx-slinkyDrop ca__fx-jiggleTransform"
+  data-at-delay="200 300 400"
+  data-at-duration="1000">
+  Animate each word smoothly
+</h2>
+```
+
+## 1. Letter Animation Usage
 
 Animate text one letter at a time with different sequencing styles:
 
-**➜ Sequential (in order):** `data-at-sequence`
+**Sequential (in order):** `data-at-sequence`
 
 ```html
 <h1 class="cssanimation" data-at-sequence="ca__fx-fadeIn">Letters Animate</h1>
 ```
 
-**➜ Randomized order** `data-at-random`
+**Randomized order** `data-at-random`
 
 ```html
 <p class="cssanimation" data-at-random="ca__fx-bounceInTop">
@@ -80,7 +122,7 @@ Animate text one letter at a time with different sequencing styles:
 </p>
 ```
 
-**➜ Reverse (last letter first)** `data-at-reverse`
+**Reverse (last letter first)** `data-at-reverse`
 
 ```html
 <h3 class="cssanimation" data-at-reverse="ca__fx-moveFromTop">
@@ -90,7 +132,7 @@ Animate text one letter at a time with different sequencing styles:
 
 ---
 
-### 2. Word-by-Word Animation `data-at-word`
+## 2. Word-by-Word Animation `data-at-word`
 
 ```html
 <h2 class="cssanimation" data-at-word="ca__fx-fadeIn">
@@ -98,7 +140,7 @@ Animate text one letter at a time with different sequencing styles:
 </h2>
 ```
 
-### 3. Line-by-line Animation `data-at-line`
+## 3. Line-by-line Animation `data-at-line`
 
 ```html
 <p class="cssanimation" data-at-line="ca__fx-fadeIn">
@@ -118,7 +160,9 @@ Split lines by periods `"."` or by `<br>` / `\n`. Use `data-at-separator="dot"` 
 
 You don't need to add `data-at-separator` for `<br>` or newlines, this is the **default behavior**.
 
-**🔥You can assign different animation classes and delays to each word and line! Space-separate your class names and delay values.**
+## Multiple Animation Classes
+
+🔥You can assign different animation classes and delays to each **word and line**! Space-separate your class names and delay values.
 
 ```html
 <h2
@@ -140,7 +184,7 @@ You don't need to add `data-at-separator` for `<br>` or newlines, this is the **
 
 [Check out this Text & Letter Animations Preview Tool to easily generate the animation code for your text.](https://yesiamrocks.github.io/cssanimation/text-animation.html)
 
-## `data-at-delay` in Detail
+## `data-at-delay`
 
 The `data-at-delay` attribute specifies the delay before each animated unit (letter, word, or line) begins its animation. The values are in milliseconds (ms).
 
@@ -162,7 +206,7 @@ The `data-at-delay` attribute specifies the delay before each animated unit (let
 
 This allows you to create rhythmic or staggered entry effects easily, like `data-at-delay="50 100 100"` as in your example. The first unit gets 50ms delay, and all subsequent units get 100ms delay.
 
-## `data-at-base-duration` in Detail
+## `data-at-base-duration`
 
 The `data-at-base-duration` attribute provides a simple way to set a global default animation duration for all units (letters, words, or lines) in milliseconds (ms).
 
@@ -184,31 +228,6 @@ This value is used to explicitly set the duration for all units, overriding any 
 3. Internal library default (if no duration is specified anywhere)
 
 This means `data-at-base-duration` gives you a convenient way to set a project-wide or component-wide default duration without needing to edit CSS.
-
-## Supported Attributes for Text Animations Plugin
-
-| Attribute               | Description                                                                      |
-| ----------------------- | -------------------------------------------------------------------------------- |
-| `data-at-sequence`      | Animates letter-by-letter, in order.                                             |
-| `data-at-random`        | Animates letter-by-letter, in a randomized order.                                |
-| `data-at-reverse`       | Animates letter-by-letter, in reverse order (last letter first).                 |
-| `data-at-word`          | Animates word-by-word.                                                           |
-| `data-at-line`          | Animates line-by-line.                                                           |
-| `data-at-delay`         | Accepts one or more delay values (e.g., `100 300 500`) in milliseconds per unit. |
-| `data-at-base-duration` | Optional base animation duration per unit (in ms)                                |
-| `data-at-separator`     | Use `dot` to split on periods `( . )`. Default: line breaks (`<br>` or `\n`)     |
-
-**Example: Full Setup**
-
-```html
-<h2
-  class="cssanimation"
-  data-at-word="ca__fx-fadeIn ca__fx-fadeInLeft ca__fx-slinkyDrop ca__fx-jiggleTransform"
-  data-at-delay="200 300 400"
-  data-at-duration="1000">
-  Animate each word smoothly
-</h2>
-```
 
 ## Developer Tips
 
