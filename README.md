@@ -10,6 +10,8 @@
 
 **AnimText** is a lightweight JavaScript enhancer for animating text with **letter-by-letter, word-by-word, and line-by-line** animations to your projects. It's designed to work seamlessly with [{css}animation](https://github.com/yesiamrocks/cssanimation), for robust and customizable text effects.
 
+**AnimText** is a lightweight, dependency-free JavaScript library designed to make precise letter-by-letter, word-by-word, and line-by-line text animations incredibly simple. Forget complex JavaScript or heavy frameworks; AnimText empowers you to create stunning, dynamic text effects using nothing but intuitive **HTML data attributes**.
+
 ## Key Features
 
 - Highly customizable: Control animations directly with HTML attributes.
