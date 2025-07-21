@@ -1,4 +1,4 @@
-# AnimText.js – Lightweight JavaScript Library for Letter, Word & Line Animations
+# AnimText: Letter, Word & Line Text Animation JS Library
 
 ![Vanilla JS](https://img.shields.io/badge/JS-Vanilla%20JS-brightgreen?style=for-the-badge)
 ![No Dependencies](https://img.shields.io/badge/Dependencies-None-lightgrey?style=for-the-badge)
@@ -18,6 +18,8 @@
 - Sequential Animation Logic: Units wait for the previous one to complete.
 - Random & Reverse Effects: Get creative with animation order.
 - Smart Handling: Safely handles whitespace and provides animation class fallbacks.
+
+👉 [Live Demo](https://yesiamrocks.github.io/animtext/) | [Download via NPM](https://www.npmjs.com/package/animtext) | [Check on jsDelivr](https://www.jsdelivr.com/package/npm/animtext) | [View on unpkg](https://app.unpkg.com/animtext)
 
 ## Installation
 
