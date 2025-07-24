@@ -1,11 +1,11 @@
 /*!
  * animtext.js
  * Title: animtext
- * Description: A lightweight JavaScript utility to split text into letters with animation-ready wrappers. Perfect for GSAP, cssanimation, or any custom animation workflow.
+ * Description: AnimText is a JavaScript library for letter, word, & line animations. Easily create dynamic text effects with simple HTML data attributes.
  *
- * Version: 1.1.2
+ * Version: 1.1.3
  * Author: Shafayetul Islam Pavel
- * Website: https://github.com/yesiamrocks/animtext#readme
+ * Website: https://github.com/yesiamrocks/animtext
  * LinkedIn: https://www.linkedin.com/in/shafayetul/
  * Email: hello@cssanimation.io
  * GitHub: https://github.com/yesiamrocks
