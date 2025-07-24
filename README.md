@@ -2,6 +2,7 @@
 
 ![Vanilla JS](https://img.shields.io/badge/JS-Vanilla%20JS-brightgreen?style=for-the-badge)
 ![No Dependencies](https://img.shields.io/badge/Dependencies-None-lightgrey?style=for-the-badge)
+![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=for-the-badge)
 [![npm](https://img.shields.io/npm/v/animtext?style=for-the-badge)](https://www.npmjs.com/package/animtext)
 [![jsDelivr](https://img.shields.io/jsdelivr/npm/hm/animtext?style=for-the-badge)](https://www.jsdelivr.com/package/npm/animtext)
 [![unpkg](https://img.shields.io/badge/CDN-unpkg-blue?style=for-the-badge)](https://unpkg.com/browse/animtext/)

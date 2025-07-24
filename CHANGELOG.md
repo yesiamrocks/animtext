@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.3] - 2025-07-23
+
+### Changed
+
+- Updated project license to **Apache License, Version 2.0**
+
+### Added
+
+- Introduced a `NOTICE` file with attribution details for legal clarity
+  - Author: Shafayetul Islam Pavel
+  - Project: AnimText https://github.com/yesiamrocks/animtext
+  - Attribution is now required when using, modifying, or redistributing the software
+
 ## [1.1.1] – 2025-07-18
 
 ### Documentation Update
