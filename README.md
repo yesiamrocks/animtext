@@ -400,6 +400,12 @@ Put this in your index.html:
 </html>
 ```
 
+## License
+
+**Triggle** is proudly open-sourced under the [Apache License 2.0](./LICENSE). You can freely use it in personal, commercial, and creative projects.
+
+Want a quick explanation? See the [License Summary →](./ABOUT-LICENSE.md)
+
 ## Contribute
 
 We welcome all contributions — whether it’s fixing bugs, adding feature, improving docs, or sharing ideas!

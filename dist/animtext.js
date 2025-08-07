@@ -3,7 +3,7 @@
  * Title: animtext
  * Description: AnimText is a JavaScript library for letter, word, & line animations. Easily create dynamic text effects with simple HTML data attributes.
  *
- * Version: 1.1.3
+ * Version: 1.1.4
  * Author: Shafayetul Islam Pavel
  * Website: https://github.com/yesiamrocks/animtext
  * LinkedIn: https://www.linkedin.com/in/shafayetul/
