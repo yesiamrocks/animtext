@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.1.4] - 2025-08-07
+
+### Added
+
+- “Support This Project” and “Become a Community Sponsor” sections with clear benefits and heartfelt messaging.
+- Calls-to-action for GitHub Issues, Discussions, and Pull Requests.
+- Newsletter promotion with badge and link to "Pixels & Projects with Pavel".
+
+### Improved
+
+- Enhanced project intro for clarity and developer appeal.
+- Reorganized README badge layout for better scannability.
+- Final emotional note and signature with contact/social badges.
+
 ## [1.1.3] - 2025-07-23
 
 ### Changed

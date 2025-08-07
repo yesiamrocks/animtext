@@ -9,6 +9,8 @@
 [![View Demo](https://img.shields.io/badge/🎬%20Live-Demo-green?style=for-the-badge)](https://yesiamrocks.github.io/animtext/)
 [![Made for {css}animation](https://img.shields.io/badge/Made%20for-{css}animation-7e2ea0?style=for-the-badge&logo=css3&logoColor=white)](https://github.com/yesiamrocks/cssanimation)
 
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support%20My%20Work-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white)](https://www.buymeacoffee.com/yesiamrocks) [![Join Membership](https://img.shields.io/badge/Become%20a%20Member-Monthly%20Support-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white)](https://www.buymeacoffee.com/yesiamrocks/membership)
+
 **AnimText** is a lightweight JavaScript enhancer for animating text with **letter-by-letter, word-by-word, and line-by-line** animations to your projects. It's designed to work seamlessly with [{css}animation](https://github.com/yesiamrocks/cssanimation), for robust and customizable text effects.
 
 **AnimText** is a lightweight, dependency-free JavaScript library designed to make precise letter-by-letter, word-by-word, and line-by-line text animations incredibly simple. Forget complex JavaScript or heavy frameworks; AnimText empowers you to create stunning, dynamic text effects using nothing but intuitive **HTML data attributes**.
@@ -397,3 +399,66 @@ Put this in your index.html:
   </body>
 </html>
 ```
+
+## Contribute
+
+We welcome all contributions — whether it’s fixing bugs, adding feature, improving docs, or sharing ideas!
+
+- Found an issue? [Open a GitHub Issue](https://github.com/yesiamrocks/animtext/issues)
+- Want to improve the library? [Submit a Pull Request](https://github.com/yesiamrocks/animtext/pulls)
+- Have questions or feature ideas? [Start a Discussion](https://github.com/yesiamrocks/animtext/discussions)
+
+Help us make **AnimText** even more magical for everyone.
+
+## Need Help?
+
+Running into issues while using **AnimText** in your project?  
+Whether it's a website, landing page, tool, or framework integration, we're here to help!
+
+- Report bugs or problems via [GitHub Issues](https://github.com/yesiamrocks/animtext/issues)
+- Ask questions or get guidance in [GitHub Discussions](https://github.com/yesiamrocks/animtext/discussions)
+
+We’re happy to assist and make sure everything works smoothly in your setup.
+
+## Support This Project
+
+If **AnimText** has saved you time, added a little magic to your UI, or helped bring your creative vision to life — please consider supporting its development.
+
+This project is built with care, during late nights and weekends, with a passion for open-source and motion design. Your support helps me:
+
+- Keep the library up to date and bug-free
+- Add new features and animation triggers
+
+Every coffee counts — thank you for helping me keep creating. 🙏
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support%20My%20Work-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white)](https://www.buymeacoffee.com/yesiamrocks)
+
+## Become a Community Sponsor
+
+If **AnimText** helped you ship faster, spark delight in your UI, or just made your day as a developer easier — I’d be honored to have your support.
+
+This isn’t a big team or a funded project. It’s just me — **Pavel** — building tools I wish existed.  
+From late nights to early mornings, I pour love into every animation, every feature, every detail — to make the creative process more fun, expressive, and empowering for makers like you.
+
+Your sponsorship helps me:
+
+- Keep the library free and open for everyone
+- Push out new triggers, animation packs, and ideas faster
+- Write thoughtful dev/design content via my newsletter  
+  👉 [Pixels & Projects with Pavel](https://www.linkedin.com/newsletters/pixels-projects-with-pavel-7093275757006782464/)
+
+### As a Community Sponsor, you'll receive:
+
+- A shoutout in the newsletter
+- Your name or project proudly featured in the documentation and site
+- My sincere gratitude for backing indie creativity on the web
+
+Let’s build a more playful, animated web — together.
+
+[![Join Membership](https://img.shields.io/badge/Become%20a%20Member-Monthly%20Support-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white)](https://www.buymeacoffee.com/yesiamrocks/membership)
+
+<br>
+
+---
+
+![Built with ❤️ by Pavel](https://img.shields.io/badge/Built%20with-%E2%9D%A4%EF%B8%8F%20by%20Pavel-orange?style=for-the-badge) [![LinkedIn](https://img.shields.io/badge/LinkedIn-@shafayetul-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shafayetul/) [![Twitter](https://img.shields.io/badge/Twitter-@yesiamrocks-1DA1F2?style=for-the-badge&logo=x&logoColor=white)](https://twitter.com/yesiamrocks) [![Email](https://img.shields.io/badge/Email-yesiamrocks@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:yesiamrocks@gmail.com) [![Newsletter](https://img.shields.io/badge/Pixels_&_Projects_with_Pavel-Subscribe-a6ca4b?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/newsletters/pixels-projects-with-pavel-7093275757006782464/)
